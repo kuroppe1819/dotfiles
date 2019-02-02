@@ -1,0 +1,15 @@
+{
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "window.zoomLevel": 0,
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "C_Cpp.clang_format_fallbackStyle": "WebKit",
+    "arduino.additionalUrls": [
+        "https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json",
+        "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
+    ],
+    "breadcrumbs.enabled": true,
+    "git.confirmSync": false,
+    "editor.minimap.showSlider": "always"
+}
