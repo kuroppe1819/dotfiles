@@ -1,0 +1,3 @@
+# dotfiles
+
+macとlinuxの設定
