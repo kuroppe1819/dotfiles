@@ -1,3 +1,3 @@
 #!/bin/bash
 ln -snfv ~/dotfiles/vim/.vimrc ~/.vimrc
-ln -snfv ~/dotfiles/vim/colors ~/.vim
+ln -snfv ~/dotfiles/vim ~/.vim
