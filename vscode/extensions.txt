@@ -9,10 +9,10 @@ ms-vscode.cpptools
 ms-vsliveshare.vsliveshare
 PeterJausovec.vscode-docker
 robinbentley.sass-indented
+shd101wyy.markdown-preview-enhanced
 techer.open-in-browser
 thekalinga.bootstrap4-vscode
 vsciot-vscode.vscode-arduino
 vscodevim.vim
-WallabyJs.quokka-vscode
 xabikos.JavaScriptSnippets
 Zignd.html-css-class-completion
