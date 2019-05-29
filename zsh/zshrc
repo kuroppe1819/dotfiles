@@ -14,10 +14,7 @@ fi
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Customize to your needs...
-alias ls='ls -G'
-alias la='ls -a'
-
-alias g='git'
-alias gs='git status'
-alias gc='git checkout'
-alias gb='git branch'
+alias ls="ls -G"
+alias la="ls -a"
+alias git-s="git status"
+alias git-ch="git cherry-pick"
