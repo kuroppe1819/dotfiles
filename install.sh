@@ -1,16 +1,21 @@
 #!/bin/bash
-
 DOTDIR=$HOME/dotfiles
 
+# Install package manager
 if [[ $(uname) == 'Darwin' && ! -x $(type brew > /dev/null 2>&1) ]]; then
   echo "Installing HomeBrew...."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+# Install packages
 brew install zsh zsh-completions
 brew install git
+
+# Download dotfiles
 echo "Downloading dotfiles...."
 git clone https://github.com/kuroppe1819/dotfiles.git $HOME
 
+# Create symbolic links
 for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
     [ $dirPath = $DOTDIR ] && continue
     [ $dirPath = $DOTDIR/vscode ] && continue
@@ -18,7 +23,10 @@ for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
         ln -snfv $dirPath/$fileName ~/$fileName
     done
 done
+ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
+ln -sfnv ~/Library/Mobile\ Documents/com~apple~CloudDocs/ ~/iCloud
 
+# VSCode settings
 if [ -e ~/Library/Application\ Support/Code/User ]; then
     ln -snfv settings.json ~/Library/Application\ Support/Code/User/settings.json
     for extension in `cat ~/dotfiles/vscode/extensions.txt`; do
@@ -28,8 +36,7 @@ else
     echo "Not found the VSCode"
 fi
 
-ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
-ln -sfnv ~/Library/Mobile\ Documents/com~apple~CloudDocs/ ~/iCloud# change shell
+# change shell
 shellsPath=/etc/shells
 localShellPath=/usr/local/bin/zsh
 if [[ ! `cat $shellsPath | grep $localShellPath` ]]; then
