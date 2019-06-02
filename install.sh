@@ -19,4 +19,5 @@ else
     echo "Not found the VSCode"
 fi
 
+ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
 ln -sfnv ~/Library/Mobile\ Documents/com~apple~CloudDocs/ ~/iCloud
