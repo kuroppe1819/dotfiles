@@ -13,9 +13,6 @@ fi
 # Zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
 # Customize to your needs...
 alias ls="ls -G"
 alias la="ls -a"
