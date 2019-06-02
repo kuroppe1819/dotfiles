@@ -13,7 +13,7 @@ brew install git
 
 # Download dotfiles
 echo "Downloading dotfiles...."
-git clone https://github.com/kuroppe1819/dotfiles.git $HOME
+git clone https://github.com/kuroppe1819/dotfiles.git $HOME/dotfiles
 
 # Create symbolic links
 for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
