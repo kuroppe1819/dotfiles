@@ -10,6 +10,7 @@ fi
 # Install packages
 brew install zsh zsh-completions
 brew install git
+brew cask install visual-studio-code
 
 # Download dotfiles
 echo "Downloading dotfiles...."
