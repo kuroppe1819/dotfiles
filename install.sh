@@ -8,6 +8,9 @@ if [[ $(uname) == 'Darwin' && ! -x $(type brew > /dev/null 2>&1) ]]; then
 fi
 brew install zsh zsh-completions
 brew install git
+echo "Downloading dotfiles...."
+git clone https://github.com/kuroppe1819/dotfiles.git $HOME
+
 for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
     [ $dirPath = $DOTDIR ] && continue
     [ $dirPath = $DOTDIR/vscode ] && continue
