@@ -19,5 +19,8 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # Customize to your needs...
 alias ls="ls -G"
 alias la="ls -a"
-alias git-s="git status"
-alias git-ch="git cherry-pick"
+alias g="git"
+alias gs="git status"
+alias gc="git checkout"
+alias gcp="git cherry-pick"
+
