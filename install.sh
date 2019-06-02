@@ -6,6 +6,8 @@ if [[ $(uname) == 'Darwin' && ! -x $(type brew > /dev/null 2>&1) ]]; then
   echo "Installing HomeBrew...."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+brew install zsh zsh-completions
+brew install git
 for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
     [ $dirPath = $DOTDIR ] && continue
     [ $dirPath = $DOTDIR/vscode ] && continue
