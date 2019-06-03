@@ -77,10 +77,10 @@ alias brew="env PATH=${PATH/\/Library\/Frameworks\/Python\.framework\/Versions/3
 #
 # Pyenv
 #
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 #
 # node
@@ -100,3 +100,7 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source ~/.pyenv/shims/virtualenvwrapper.sh
 fi
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="/usr/local/opt/maven@3.2/bin:$PATH"
+
