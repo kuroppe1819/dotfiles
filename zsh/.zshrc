@@ -16,7 +16,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Customize to your needs...
 alias ls="ls -G"
 alias la="ls -a"
-alias g="git"
+alias gb="git branch"
 alias gs="git status"
 alias gc="git checkout"
 alias gcp="git cherry-pick"
