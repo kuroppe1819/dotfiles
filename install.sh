@@ -12,7 +12,9 @@ brew install zsh zsh-completions
 brew install git
 brew cask install visual-studio-code
 
-# Download dotfiles
+echo "Downloading Prezto"
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
 echo "Downloading dotfiles...."
 git clone https://github.com/kuroppe1819/dotfiles.git $HOME/dotfiles
 
@@ -26,6 +28,7 @@ for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
 done
 ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
 ln -sfnv ~/Library/Mobile\ Documents/com~apple~CloudDocs/ ~/iCloud
+ln -snfv ~/dotfiles/zsh/prompt/prompt_cpure_setup ~/.zprezto/modules/prompt/functions/prompt_cpure_setup
 
 # VSCode settings
 if [ -e ~/Library/Application\ Support/Code/User ]; then
