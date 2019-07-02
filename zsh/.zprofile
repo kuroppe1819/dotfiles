@@ -63,13 +63,6 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 #
-# Android
-#
-export ANDROID_HOME=/Users/kuroppe/Library/Android/sdk
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:$ANDROID_HOME/tools"
-
-#
 # Homebrew
 #
 alias brew="env PATH=${PATH/\/Library\/Frameworks\/Python\.framework\/Versions/3\.6/bin:/} brew"
@@ -77,16 +70,19 @@ alias brew="env PATH=${PATH/\/Library\/Frameworks\/Python\.framework\/Versions/3
 #
 # Pyenv
 #
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if [ type pyenv > /dev/null 2>&1 ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 #
 # node
 #
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
-export NODEBREW_ROOT="/usr/local/var/nodebrew"
+if [ type nodebrew > /dev/null 2>&1 ]; then
+    export PATH="$HOME/.nodebrew/current/bin:$PATH"
+fi
 
 #
 # openSSL
@@ -99,4 +95,15 @@ export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source ~/.pyenv/shims/virtualenvwrapper.sh
+fi
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="/usr/local/opt/maven@3.2/bin:$PATH"
+
+#
+# chrby
+#
+if [ -d /usr/local/share/chruby ]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
 fi
