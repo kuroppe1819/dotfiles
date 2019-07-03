@@ -13,6 +13,14 @@ fi
 # Zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# Search shell command history
+function select-history() {
+  BUFFER=$(history -n -1000 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  CURSOR=$#BUFFER
+}
+zle -N select-history
+bindkey '^r' select-history
+
 # Customize to your needs...
 alias ls="ls -G"
 alias la="ls -a"

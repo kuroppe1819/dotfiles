@@ -8,8 +8,7 @@ if [[ $(uname) == 'Darwin' && ! -x $(type brew > /dev/null 2>&1) ]]; then
 fi
 
 # Install packages
-brew install zsh zsh-completions
-brew install git
+brew install zsh zsh-completions git fzf
 brew cask install visual-studio-code
 
 echo "Downloading Prezto"
