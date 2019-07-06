@@ -28,6 +28,7 @@ done
 ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
 ln -sfnv ~/Library/Mobile\ Documents/com~apple~CloudDocs/ ~/iCloud
 ln -snfv ~/dotfiles/zsh/prompt/prompt_cpure_setup ~/.zprezto/modules/prompt/functions/prompt_cpure_setup
+git config --global core.excludesfile ~/.gitignore_global
 
 # VSCode settings
 if [ -e ~/Library/Application\ Support/Code/User ]; then
