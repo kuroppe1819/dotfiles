@@ -20,6 +20,7 @@ function select-history() {
 }
 zle -N select-history
 bindkey '^r' select-history
+export FZF_DEFAULT_OPTS='--reverse --border'
 
 # Customize to your needs...
 alias ls="ls -G"
