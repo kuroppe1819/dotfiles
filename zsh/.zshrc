@@ -15,11 +15,12 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Search shell command history
 function select-history() {
-  BUFFER=$(history -n -1000 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  BUFFER=$(history -n -1000 | fzf --no-sort +m --query "^$LBUFFER" --prompt="History > ")
   CURSOR=$#BUFFER
 }
 zle -N select-history
 bindkey '^r' select-history
+export FZF_DEFAULT_OPTS='--reverse --border'
 
 # ls    
 alias ls="ls -G"
