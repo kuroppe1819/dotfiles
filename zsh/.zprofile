@@ -80,9 +80,7 @@ fi
 #
 # node
 #
-if [ type nodebrew > /dev/null 2>&1 ]; then
-    export PATH="$HOME/.nodebrew/current/bin:$PATH"
-fi
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 #
 # openSSL
