@@ -50,7 +50,7 @@ syntax on
 colorscheme hybrid
 set background=dark
 
-" カーソル
+" カーソル系
 if has('vim_starting')
     " 挿入モード時に非点滅の縦棒タイプのカーソル
     let &t_SI .= "\e[6 q"
@@ -63,6 +63,11 @@ endif
 set ttimeout
 " 50ms後にタイムアウトする
 set timeoutlen=50
+" キーマップの変更
+inoremap <C-e> <Esc>$a
+inoremap <C-a> <Esc>^i
+noremap <C-e> <Esc>$a
+noremap <C-a> <Esc>^i
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
