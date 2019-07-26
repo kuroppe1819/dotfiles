@@ -85,3 +85,5 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
+" ハイライトの切り替え
+nnoremap <F3> :noh<CR>
