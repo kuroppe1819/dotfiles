@@ -22,24 +22,6 @@ zle -N select-history
 bindkey '^r' select-history
 export FZF_DEFAULT_OPTS='--reverse --border'
 
-# fzf wiki https://github.com/junegunn/fzf/wiki/examples
-# fd - cd to selected directory
-cdf() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
-
-# fbr - checkout git branch (including remote branches)
-gcof() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
 # ls    
 alias ls="ls -G"
 alias la="ls -a"
@@ -66,6 +48,25 @@ alias grhh="git reset --hard HEAD"
 alias gr="git rebase"
 alias glog="git log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso"
 
-alias gcd() {
+gcd() {
     cd $(git rev-parse --show-toplevel)
 }
+
+# fzf wiki https://github.com/junegunn/fzf/wiki/examples
+# fd - cd to selected directory
+cdf() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+# fbr - checkout git branch (including remote branches)
+gcof() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
