@@ -8,14 +8,13 @@ if [ !type "brew" > /dev/null 2>&1 ]; then
 fi
 
 # Install packages
-brew install zsh zsh-completions git fzf
-brew cask install visual-studio-code
+brew bundle --file=$DOTDIR/brew/Brewfile
 
 echo "Downloading Prezto"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 echo "Downloading dotfiles...."
-git clone https://github.com/kuroppe1819/dotfiles.git $HOME/dotfiles
+git clone https://github.com/kuroppe1819/dotfiles.git $DOTDIR
 
 # Create symbolic links
 for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
@@ -26,10 +25,14 @@ for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
         fi
     done
 done
-ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
-ln -sfnv ~/Library/Mobile\ Documents/com~apple~CloudDocs/ ~/iCloud
-ln -snfv ~/dotfiles/zsh/prompt/prompt_cpure_setup ~/.zprezto/modules/prompt/functions/prompt_cpure_setup
 git config --global core.excludesfile ~/.gitignore_global
+ln -sfnv ~/Library/Mobile\ Documents/com~apple~CloudDocs/ ~/iCloud
+ln -snfv $DOTDIR/zsh/prompt/prompt_cpure_setup ~/.zprezto/modules/prompt/functions/prompt_cpure_setup
+
+if [ ! -d ~/.vim ]; then
+    mkdir ~/.vim
+fi
+ln -snfv $DOTDIR/vim/colors ~/.vim/colors
 
 # VSCode settings
 if [ -e ~/Library/Application\ Support/Code/User ]; then
