@@ -43,7 +43,7 @@ fi
 # change shell
 shellsPath=/etc/shells
 localShellPath=/usr/local/bin/zsh
-if [[ ! `cat $shellsPath | grep $localShellPath` ]]; then
+if [ !`cat $shellsPath | grep $localShellPath` ]; then
     echo /usr/local/bin/zsh | sudo tee -a /etc/shells > /dev/null 2>&1
 fi
 chsh -s /usr/local/bin/zsh
