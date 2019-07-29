@@ -20,9 +20,10 @@ git clone https://github.com/kuroppe1819/dotfiles.git $HOME/dotfiles
 # Create symbolic links
 for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
     [ $dirPath = $DOTDIR ] && continue
-    [ $dirPath = $DOTDIR/vscode ] && continue
     for fileName in `find $dirPath -maxdepth 1 -type f | awk -F/ '{print $NF}'`; do
-        ln -snfv $dirPath/$fileName ~/$fileName
+        if [[ $fileName =~ ^\..* ]]; then
+            ln -snfv $dirPath/$fileName ~/$fileName
+        fi
     done
 done
 ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
