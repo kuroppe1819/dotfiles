@@ -1,13 +1,15 @@
 abusaidm.html-snippets
 dsznajder.es7-react-js-snippets
 glen-84.sass-lint
+k--kato.intellij-idea-keybindings
 mathiasfrohlich.Kotlin
 michelemelluso.code-beautifier
 mkaufman.HTMLHint
+ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode.cpptools
 ms-vsliveshare.vsliveshare
-PeterJausovec.vscode-docker
+pnp.polacode
 robinbentley.sass-indented
 shd101wyy.markdown-preview-enhanced
 techer.open-in-browser
