@@ -1,15 +1,97 @@
 {
-    "editor.multiCursorModifier": "ctrlCmd",
+    // 貼り付け時に自動フォーマット
     "editor.formatOnPaste": true,
+    // 保存時に自動フォーマット
     "editor.formatOnSave": true,
+    // パンくずリストの表示
+    "breadcrumbs.enabled": true,
+    // 今いる行が強調される
+    "editor.renderLineHighlight": "all",
     "window.zoomLevel": 0,
+    // Vim
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-e>"
+            ],
+            "after": [
+                "<ESC>",
+                "$",
+                "a"
+            ]
+        },
+        {
+            "before": [
+                "<C-a>"
+            ],
+            "after": [
+                "<ESC>",
+                "^",
+                "i"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "$"
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-e>"
+            ],
+            "after": [
+                "<ESC>",
+                "$",
+                "a"
+            ]
+        },
+        {
+            "before": [
+                "<C-a>"
+            ],
+            "after": [
+                "<ESC>",
+                "^",
+                "i"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
+    // Arduino
     "C_Cpp.intelliSenseEngine": "Tag Parser",
     "C_Cpp.clang_format_fallbackStyle": "WebKit",
     "arduino.additionalUrls": [
         "https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json",
         "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
-    ],
-    "breadcrumbs.enabled": true,
-    "git.confirmSync": false,
-    "editor.minimap.showSlider": "always"
+    ]
 }

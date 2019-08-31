@@ -32,8 +32,8 @@ git config --global core.excludesfile ~/.gitignore_global
 
 # VSCode settings
 if [ -e ~/Library/Application\ Support/Code/User ]; then
-    ln -snfv settings.json ~/Library/Application\ Support/Code/User/settings.json
-    for extension in `cat ~/dotfiles/vscode/extensions.txt`; do
+    \cp -f $DOTDIR/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+    for extension in `cat $DOTDIR/vscode/extensions.txt`; do
         code --install-extension $extension
     done
 else 
