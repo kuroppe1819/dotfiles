@@ -25,9 +25,9 @@ for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
         ln -snfv $dirPath/$fileName ~/$fileName
     done
 done
-ln -snfv ~/dotfiles/vim/colors ~/.vim/colors
+ln -snfv $DOTDIR/vim/colors ~/.vim/colors
 ln -sfnv ~/Library/Mobile\ Documents/com~apple~CloudDocs/ ~/iCloud
-ln -snfv ~/dotfiles/zsh/prompt/prompt_cpure_setup ~/.zprezto/modules/prompt/functions/prompt_cpure_setup
+ln -snfv $DOTDIR/zsh/prompt/prompt_cpure_setup ~/.zprezto/modules/prompt/functions/prompt_cpure_setup
 git config --global core.excludesfile ~/.gitignore_global
 
 # VSCode settings
