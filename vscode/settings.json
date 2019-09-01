@@ -72,6 +72,23 @@
     "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "$",
+                "h"
+            ]
+        },
+        {
+            "before": [
                 ">"
             ],
             "commands": [
