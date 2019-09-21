@@ -102,3 +102,9 @@ if [ -d /usr/local/share/chruby ]; then
   source /usr/local/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
 fi
+
+#
+# AWS
+#
+export AWS_PROFILE=kintone-build-js
+export AWS_SDK_LOAD_CONFIG=true
