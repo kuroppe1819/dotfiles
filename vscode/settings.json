@@ -8,6 +8,10 @@
     // 今いる行が強調される
     "editor.renderLineHighlight": "all",
     "window.zoomLevel": 0,
+    // カーソルの色を変更する
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#F06292"
+    },
     // Vim
     "vim.normalModeKeyBindingsNonRecursive": [
         {
