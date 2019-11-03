@@ -1,8 +1,11 @@
 {
-    // 貼り付け時に自動フォーマット
-    "editor.formatOnPaste": true,
-    // 保存時に自動フォーマット
-    "editor.formatOnSave": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {"language": "typescript", "autoFix": true },
+        {"language": "typescriptreact", "autoFix": true }
+    ],
     // パンくずリストの表示
     "breadcrumbs.enabled": true,
     // 今いる行が強調される
@@ -11,7 +14,7 @@
     // カーソルの色を変更する
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#F06292"
-    }
+    },
     // Vim
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -114,5 +117,7 @@
     "arduino.additionalUrls": [
         "https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json",
         "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
-    ]
+    ],
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Dracula"
 }

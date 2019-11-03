@@ -1,6 +1,10 @@
 abusaidm.html-snippets
+dbaeumer.vscode-eslint
+dracula-theme.theme-dracula
 dsznajder.es7-react-js-snippets
-glen-84.sass-lint
+esbenp.prettier-vscode
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
 mathiasfrohlich.Kotlin
 michelemelluso.code-beautifier
 mkaufman.HTMLHint
@@ -8,12 +12,11 @@ ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode.cpptools
 ms-vsliveshare.vsliveshare
+msjsdiag.debugger-for-chrome
 pnp.polacode
 robinbentley.sass-indented
-shd101wyy.markdown-preview-enhanced
 techer.open-in-browser
 thekalinga.bootstrap4-vscode
 vsciot-vscode.vscode-arduino
 vscodevim.vim
-xabikos.JavaScriptSnippets
 Zignd.html-css-class-completion
