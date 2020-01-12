@@ -1,3 +1,10 @@
 bind main    R !git rebase -i %(commit)
 bind diff    R !git rebase -i %(commit)
-bind generic 9 !@sh -c "echo -n %(commit) | pbcopy"
+bind generic 9 !@sh -c "echo %(commit) | pbcopy"
+
+set blame-view = line-number:yes,interval=1 text
+set pager-view = line-number:yes,interval=1 text
+set stage-view = line-number:yes,interval=1 text
+set log-view   = line-number:yes,interval=1 text
+set blob-view  = line-number:yes,interval=1 text
+set diff-view  = line-number:yes,interval=1 text
