@@ -1,14 +1,12 @@
 #!/bin/bash
 DOTDIR=$HOME/dotfiles
 
-# Install package manager
 if !(type "brew" > /dev/null 2>&1); then
-  echo "Installing HomeBrew...."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo "Would you please install Homebrew."
+  echo "Paste that in a macOS Terminal prompt."
+  echo "=> /usr/bin/ruby -e \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\""
+  exit
 fi
-
-# Install packages
-brew bundle --file=$DOTDIR/brew/Brewfile
 
 echo "Downloading Prezto"
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -42,13 +40,17 @@ if [ -e ~/Library/Application\ Support/Code/User ]; then
         code --install-extension $extension
     done
 else 
-    echo "Not found the VSCode"
+    echo "Not found the VSCode."
 fi
 
 # change shell
-shellsPath=/etc/shells
 localShellPath=/usr/local/bin/zsh
-if [ !`cat $shellsPath | grep $localShellPath` ]; then
-    echo /usr/local/bin/zsh | sudo tee -a /etc/shells > /dev/null 2>&1
+if [ -e "/usr/local/bin/zsh" ]; then
+    shellsPath=/etc/shells
+    if [ !`cat $shellsPath | grep $localShellPath` ]; then
+        echo /usr/local/bin/zsh | sudo tee -a /etc/shells > /dev/null 2>&1
+    fi
+    chsh -s /usr/local/bin/zsh
+else
+    echo "Not found $localShellPath ."
 fi
-chsh -s /usr/local/bin/zsh
