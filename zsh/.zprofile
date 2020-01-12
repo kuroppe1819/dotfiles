@@ -77,7 +77,7 @@ fi
 #
 # node
 #
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
+eval "$(nodenv init -)"
 
 #
 # openSSL
