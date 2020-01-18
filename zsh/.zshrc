@@ -50,6 +50,8 @@ gcd() {
     cd $(git rev-parse --show-toplevel)
 }
 
+alias sed="gsed"
+
 # fzf wiki https://github.com/junegunn/fzf/wiki/examples
 # fd - cd to selected directory
 cdf() {
