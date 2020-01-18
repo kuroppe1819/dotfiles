@@ -44,6 +44,7 @@ alias grh="git reset HEAD"
 alias grhh="git reset --hard HEAD"
 alias gr="git rebase"
 alias glog="git log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso"
+alias gbd-merged="git branch --merged|egrep -v '(develop|master)'|xargs git branch -D"
 
 gcd() {
     cd $(git rev-parse --show-toplevel)
