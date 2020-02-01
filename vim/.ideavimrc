@@ -1,2 +1,3 @@
 source ~/.keymap.vim
 set multiple-cursors " <A-n>: option + n
+set clipboard=unnamed

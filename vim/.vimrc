@@ -22,6 +22,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 " eol     : 改行
 " start   : 挿入モード開始位置より手前の文字
 set backspace=indent,eol,start
+"クリックボードと同期する"
+set clipboard+=unnamed
 
 " 見た目系
 " 行番号を表示
