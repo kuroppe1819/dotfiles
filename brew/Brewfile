@@ -30,6 +30,4 @@ cask "iterm2"
 cask "karabiner-elements"
 cask "slack"
 cask "visual-studio-code"
-mas "Just Focus", id: 1142151959
-mas "Keynote", id: 409183694
 mas "Xcode", id: 497799835
