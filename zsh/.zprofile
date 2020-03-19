@@ -5,7 +5,6 @@
 #
 # Browser
 #
-
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
@@ -13,7 +12,6 @@ fi
 #
 # Editors
 #
-
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
@@ -21,7 +19,6 @@ export PAGER='less'
 #
 # Language
 #
-
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
@@ -29,7 +26,6 @@ fi
 #
 # Paths
 #
-
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -47,7 +43,6 @@ path=(
 #
 # Less
 #
-
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
 # Remove -X and -F (exit if the content fits on one screen) to enable it.
@@ -77,7 +72,13 @@ fi
 #
 # node
 #
-eval "$(nodenv init -)"
+if [ type nodebrew > /dev/null 2>&1 ]; then
+  export PATH="$HOME/.nodebrew/current/bin:$PATH"
+fi
+
+if [ type nodenv > /dev/null 2>&1 ]; then
+  eval "$(nodenv init -)"
+fi
 
 #
 # openSSL
@@ -88,12 +89,9 @@ export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
 # virtualenv
 #
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source ~/.pyenv/shims/virtualenvwrapper.sh
+  export WORKON_HOME=$HOME/.virtualenvs
+  source ~/.pyenv/shims/virtualenvwrapper.sh
 fi
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="/usr/local/opt/maven@3.2/bin:$PATH"
 
 #
 # chrby
@@ -104,7 +102,10 @@ if [ -d /usr/local/share/chruby ]; then
 fi
 
 #
-# AWS
+# Other 
 #
 export AWS_PROFILE=kintone-build-js
 export AWS_SDK_LOAD_CONFIG=true
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="/usr/local/opt/maven@3.2/bin:$PATH"
