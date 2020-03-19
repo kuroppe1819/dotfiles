@@ -2,9 +2,10 @@ abusaidm.html-snippets
 dbaeumer.vscode-eslint
 dracula-theme.theme-dracula
 dsznajder.es7-react-js-snippets
+eamodio.gitlens
 esbenp.prettier-vscode
-formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
+jebbs.plantuml
 mathiasfrohlich.Kotlin
 michelemelluso.code-beautifier
 mkaufman.HTMLHint
