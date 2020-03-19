@@ -6,8 +6,9 @@
         {"language": "typescript", "autoFix": true },
         {"language": "typescriptreact", "autoFix": true }
     ],
-    // パンくずリストの表示
+    "workbench.activityBar.visible": true,
     "breadcrumbs.enabled": true,
+    "workbench.colorTheme": "Dracula",
     // 今いる行が強調される
     "editor.renderLineHighlight": "all",
     "window.zoomLevel": 0,
@@ -119,7 +120,5 @@
     "arduino.additionalUrls": [
         "https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json",
         "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
-    ],
-    "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Dracula"
+    ]
 }
