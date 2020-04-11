@@ -1,10 +1,12 @@
 abusaidm.html-snippets
+CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 dracula-theme.theme-dracula
 dsznajder.es7-react-js-snippets
 eamodio.gitlens
 esbenp.prettier-vscode
 formulahendry.auto-rename-tag
+humao.rest-client
 jebbs.plantuml
 mathiasfrohlich.Kotlin
 michelemelluso.code-beautifier
@@ -14,7 +16,9 @@ ms-python.python
 ms-vscode.cpptools
 ms-vsliveshare.vsliveshare
 msjsdiag.debugger-for-chrome
+PKief.material-icon-theme
 pnp.polacode
+pranaygp.vscode-css-peek
 robinbentley.sass-indented
 techer.open-in-browser
 thekalinga.bootstrap4-vscode
