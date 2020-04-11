@@ -62,23 +62,15 @@ alias brew="env PATH=${PATH/\/Library\/Frameworks\/Python\.framework\/Versions/3
 #
 # Pyenv
 #
-if [ type pyenv > /dev/null 2>&1 ]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 #
 # node
 #
-if [ type nodebrew > /dev/null 2>&1 ]; then
-  export PATH="$HOME/.nodebrew/current/bin:$PATH"
-fi
-
-if [ type nodenv > /dev/null 2>&1 ]; then
-  eval "$(nodenv init -)"
-fi
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
+eval "$(nodenv init -)"
 
 #
 # openSSL
