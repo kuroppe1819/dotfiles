@@ -9,16 +9,13 @@
     "workbench.activityBar.visible": true,
     "breadcrumbs.enabled": true,
     "workbench.colorTheme": "Dracula",
-    // 今いる行が強調される
     "editor.renderLineHighlight": "all",
     "window.zoomLevel": 0,
-    // カーソルの色を変更する
     "workbench.colorCustomizations": {
         "editorCursor.foreground": "#F06292"
     },
-    // OSとのクリップボード同期
+    "files.trimTrailingWhitespace": true,
     "vim.useSystemClipboard": true,
-    // Vim
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
