@@ -1,5 +1,8 @@
 {
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
   "workbench.activityBar.visible": true,
   "breadcrumbs.enabled": true,
   "workbench.colorTheme": "Dracula",
