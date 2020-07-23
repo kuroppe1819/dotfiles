@@ -12,7 +12,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Search shell command history
 function select-history() {
-  BUFFER=$(history -n -500 | fzf --no-sort +m --query "^$LBUFFER" --prompt="History > ")
+  BUFFER=$(history -n -500 | fd --type f | fzf --no-sort +m --query "^$LBUFFER" --prompt="History > ")
   CURSOR=$#BUFFER
 }
 zle -N select-history
