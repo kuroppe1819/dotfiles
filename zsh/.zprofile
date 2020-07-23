@@ -98,6 +98,6 @@ fi
 #
 export AWS_PROFILE=kintone-build-js
 export AWS_SDK_LOAD_CONFIG=true
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/mysql/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH="/usr/local/opt/maven@3.2/bin:$PATH"
