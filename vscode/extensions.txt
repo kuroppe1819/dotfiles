@@ -1,6 +1,4 @@
 abusaidm.html-snippets
-bradlc.vscode-tailwindcss
-ChakrounAnas.turbo-console-log
 CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 dracula-theme.theme-dracula
@@ -21,13 +19,16 @@ msjsdiag.debugger-for-chrome
 nickdemayo.vscode-json-editor
 Orta.vscode-jest
 PKief.material-icon-theme
+platformio.platformio-ide
 pnp.polacode
 pranaygp.vscode-css-peek
+slevesque.vscode-hexdump
 steoates.autoimport
 streetsidesoftware.code-spell-checker
+stringham.move-ts
 syler.sass-indented
 techer.open-in-browser
+tombonnike.vscode-status-bar-format-toggle
 vsciot-vscode.vscode-arduino
 vscodevim.vim
-xabikos.JavaScriptSnippets
 Zignd.html-css-class-completion
