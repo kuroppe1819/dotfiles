@@ -1,18 +1,24 @@
 {
-  "editor.formatOnSave": true,
-  "workbench.activityBar.visible": true,
   "breadcrumbs.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.tabCompletion": "on",
   "workbench.colorTheme": "Dracula",
   // 今いる行が強調される
   "editor.renderLineHighlight": "all",
   "window.zoomLevel": 0,
+  // 新しいタブが常に一番右側に追加される
+  "workbench.editor.openPositioning": "last",
+  "workbench.activityBar.visible": true,
   // カーソルの色を変更する
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#F06292"
   },
+  "zenMode.centerLayout": false,
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false,
   // OSとのクリップボード同期
   "vim.useSystemClipboard": true,
-  // Vim
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<C-e>"],
@@ -75,16 +81,10 @@
       "commands": ["editor.action.outdentLines"]
     }
   ],
-  // Arduino
   "C_Cpp.intelliSenseEngine": "Tag Parser",
   "C_Cpp.clang_format_fallbackStyle": "WebKit",
-  "arduino.additionalUrls": [
-    "https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json",
-    "http://arduino.esp8266.com/stable/package_esp8266com_index.json"
-  ],
   "eslint.migration.2_x": "off",
   "workbench.iconTheme": "material-icon-theme",
-  "editor.minimap.enabled": false,
   "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODUwLFwiaGVpZ2h0XCI6MTEwMH0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
   "hediet.vscode-drawio.offline": false
 }
