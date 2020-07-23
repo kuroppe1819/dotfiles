@@ -29,6 +29,22 @@
     {
       "before": ["<C-l>"],
       "after": ["$"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"]
+    },
+    {
+      "before": ["X"],
+      "after": ["\"", "_", "X"]
     }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
