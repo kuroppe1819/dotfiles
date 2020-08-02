@@ -222,5 +222,75 @@
     "key": "alt+cmd+up",
     "command": "-workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+.",
+    "command": "notebook.cell.executeAndInsertBelow",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "alt+enter",
+    "command": "-notebook.cell.executeAndInsertBelow",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "cmd+.",
+    "command": "debug.openBreakpointToSide",
+    "when": "breakpointsFocused"
+  },
+  {
+    "key": "alt+enter",
+    "command": "-debug.openBreakpointToSide",
+    "when": "breakpointsFocused"
+  },
+  {
+    "key": "cmd+.",
+    "command": "editor.action.selectAllMatches",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "alt+enter",
+    "command": "-editor.action.selectAllMatches",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "cmd+.",
+    "command": "python.datascience.runcurrentcellandaddbelow",
+    "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection && !notebookEditorFocused"
+  },
+  {
+    "key": "alt+enter",
+    "command": "-python.datascience.runcurrentcellandaddbelow",
+    "when": "editorTextFocus && python.datascience.featureenabled && python.datascience.hascodecells && !editorHasSelection && !notebookEditorFocused"
+  },
+  {
+    "key": "alt+enter",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+enter",
+    "command": "problems.action.showQuickFixes",
+    "when": "problemFocus"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-problems.action.showQuickFixes",
+    "when": "problemFocus"
+  },
+  {
+    "key": "alt+enter",
+    "command": "settings.action.editFocusedSetting",
+    "when": "inSettingsSearch"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-settings.action.editFocusedSetting",
+    "when": "inSettingsSearch"
   }
 ]
