@@ -21,5 +21,25 @@
     "prefix": "eft$",
     "body": ["${({ theme }) => theme.$0};"],
     "description": "Print a code that expand variable for theme."
-  }
+  },
+  "React Component Template": {
+		"prefix": "rct$",
+		"body": [
+			"import React from 'react';",
+			"import styled from 'styled-components';",
+			"",
+			"type Props = {};",
+			"",
+			"const Component: React.FC = () => <></>;",
+			"",
+			"const StyledComponent: React.FC = styled(Component)``;",
+			"",
+			"const Container: React.FC = () => {",
+			"    return <StyledComponent />;",
+			"};",
+			"",
+			"export const $0 = Container;",
+		],
+		"description": "React Component Template"
+	}
 }
