@@ -10,14 +10,36 @@ fi
 # Zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# Zsh default options
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
 # Search shell command history
-function select-history() {
+function history-fzf() {
   BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
   CURSOR=$#BUFFER
 }
-zle -N select-history
-bindkey '^r' select-history
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+zle -N history-fzf
+bindkey '^r' history-fzf
+
+# fbr - checkout git branch (including remote branches)
+git-branch-fzf() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux --prompt="Branch > " -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+zle -N git-branch-fzf
+bindkey '^g' git-branch-fzf
+
+# fzf wiki https://github.com/junegunn/fzf/wiki/examples
+# fd - cd to selected directory
+cdf() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
 
 # ls    
 alias ls="ls -G"
@@ -51,22 +73,3 @@ gcd() {
 }
 
 alias sed="gsed"
-
-# fzf wiki https://github.com/junegunn/fzf/wiki/examples
-# fd - cd to selected directory
-cdf() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
-
-# fbr - checkout git branch (including remote branches)
-gcof() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
