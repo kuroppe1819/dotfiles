@@ -24,11 +24,7 @@ bindkey '^r' history-fzf
 
 # fbr - checkout git branch (including remote branches)
 git-branch-fzf() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux --prompt="Branch > " -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  git checkout $(git branch -a | tr -d " " | fzf --height 60% --prompt "Branch >" --preview "git log --color=always {}" | head -n 1 | sed -e "s/^\*\s*//g" | perl -pe "s/remotes\/origin\///g")
   zle accept-line
 }
 zle -N git-branch-fzf
