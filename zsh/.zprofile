@@ -94,6 +94,12 @@ if [ -d /usr/local/share/chruby ]; then
 fi
 
 #
+# Google Cloud Platform
+#
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+#
 # Other 
 #
 export AWS_PROFILE=kintone-build-js
@@ -101,3 +107,5 @@ export AWS_SDK_LOAD_CONFIG=true
 export PATH="/usr/local/opt/mysql/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH="/usr/local/opt/maven@3.2/bin:$PATH"
+
+
