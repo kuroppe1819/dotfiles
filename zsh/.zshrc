@@ -42,6 +42,8 @@ change-directory-fzf() {
 zle -N change-directory-fzf 
 bindkey '^f' change-directory-fzf 
 
+eval "$(direnv hook zsh)"
+
 # ls    
 alias ls="ls -G"
 alias la="ls -a"
@@ -73,3 +75,7 @@ alias sed="gsed"
 gcd() {
    cd $(git rev-parse --show-toplevel)
 }
+
+# editor
+alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
+
