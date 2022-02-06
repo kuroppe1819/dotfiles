@@ -55,35 +55,9 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 #
-# Homebrew
-#
-alias brew="env PATH=${PATH/\/Library\/Frameworks\/Python\.framework\/Versions/3\.6/bin:/} brew"
-
-#
-# Pyenv
-#
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-#
-# node
-#
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
-eval "$(nodenv init -)"
-
-#
 # openSSL
 #
 export PATH=/usr/local/opt/openssl@1.1/bin:$PATH
-
-#
-# virtualenv
-#
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  export WORKON_HOME=$HOME/.virtualenvs
-  source ~/.pyenv/shims/virtualenvwrapper.sh
-fi
 
 #
 # chrby
@@ -92,20 +66,4 @@ if [ -d /usr/local/share/chruby ]; then
   source /usr/local/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
 fi
-
-#
-# Google Cloud Platform
-#
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
-#
-# Other 
-#
-export AWS_PROFILE=kintone-build-js
-export AWS_SDK_LOAD_CONFIG=true
-export PATH="/usr/local/opt/mysql/bin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="/usr/local/opt/maven@3.2/bin:$PATH"
-
 
