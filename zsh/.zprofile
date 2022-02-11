@@ -77,3 +77,9 @@ elif [[ $ARCH == x86_64 ]]; then
 	eval $(/usr/local/bin/brew shellenv)
 fi
 
+#
+# nodenv
+#
+eval "$(nodenv init -)"
+
+
