@@ -1,13 +1,13 @@
 {
   "breadcrumbs.enabled": true,
-  "files.insertFinalNewline": true,
   "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.formatOnType": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
@@ -15,16 +15,22 @@
   },
   "editor.minimap.enabled": false,
   "editor.tabCompletion": "on",
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.insertSpaces": false,
   // 今いる行が強調される
   "editor.renderLineHighlight": "all",
-  "window.zoomLevel": 0,
   // 新しいタブが常に一番右側に追加される
   "workbench.editor.openPositioning": "last",
   "workbench.activityBar.visible": true,
   // カーソルの色を変更する
   "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#F06292"
+    "editorCursor.foreground": "#F06292",
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
   },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Noctis Minimus",
   "zenMode.centerLayout": false,
   "zenMode.fullScreen": false,
   "zenMode.hideLineNumbers": false,
@@ -32,69 +38,150 @@
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-e>"],
-      "after": ["<ESC>", "$", "a"]
+      "before": [
+        "<C-e>"
+      ],
+      "after": [
+        "<ESC>",
+        "$",
+        "a"
+      ]
     },
     {
-      "before": ["<C-a>"],
-      "after": ["<ESC>", "^", "i"]
+      "before": [
+        "<C-a>"
+      ],
+      "after": [
+        "<ESC>",
+        "^",
+        "i"
+      ]
     },
     {
-      "before": ["<C-h>"],
-      "after": ["^"]
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["<C-l>"],
-      "after": ["$"]
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["d"],
-      "after": ["\"", "_", "d"]
+      "before": [
+        "d"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "d"
+      ]
     },
     {
-      "before": ["D"],
-      "after": ["\"", "_", "D"]
+      "before": [
+        "D"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "D"
+      ]
     },
     {
-      "before": ["x"],
-      "after": ["\"", "_", "x"]
+      "before": [
+        "x"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "x"
+      ]
     },
     {
-      "before": ["X"],
-      "after": ["\"", "_", "X"]
+      "before": [
+        "X"
+      ],
+      "after": [
+        "\"",
+        "_",
+        "X"
+      ]
     }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-e>"],
-      "after": ["<ESC>", "$", "a"]
+      "before": [
+        "<C-e>"
+      ],
+      "after": [
+        "<ESC>",
+        "$",
+        "a"
+      ]
     },
     {
-      "before": ["<C-a>"],
-      "after": ["<ESC>", "^", "i"]
+      "before": [
+        "<C-a>"
+      ],
+      "after": [
+        "<ESC>",
+        "^",
+        "i"
+      ]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-h>"],
-      "after": ["^"]
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["<C-l>"],
-      "after": ["$", "h"]
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "$",
+        "h"
+      ]
     },
     {
-      "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
     },
     {
-      "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
     }
   ],
   "eslint.migration.2_x": "off",
-  "workbench.iconTheme": "material-icon-theme",
   "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWxcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODUwLFwiaGVpZ2h0XCI6MTEwMH0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
   "hediet.vscode-drawio.offline": false,
-  "workbench.colorTheme": "Noctis Minimus"
+  "cSpell.userWords": [
+    "kintone"
+  ],
+  "files.insertFinalNewline": true,
+  "closuretoolshelper.closurePath": "node_modules/google-closure-library/closure/goog",
+  "closuretoolshelper.depsPaths": [
+    "src/main/webapp/static/js/deps.js",
+    "node_modules/google-closure-library/closure/goog/deps.js"
+  ],
+  "window.zoomLevel": 1
 }
