@@ -182,6 +182,5 @@
   "closuretoolshelper.depsPaths": [
     "src/main/webapp/static/js/deps.js",
     "node_modules/google-closure-library/closure/goog/deps.js"
-  ],
-  "window.zoomLevel": 1
+  ]
 }
