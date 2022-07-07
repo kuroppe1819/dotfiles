@@ -12,7 +12,6 @@ jonkwheeler.styled-components-snippets
 jpoissonnier.vscode-styled-components
 junv.recent-files
 kintone-extension.kintone-extension
-leodevbro.blockman
 liviuschera.noctis
 mkaufman.HTMLHint
 ms-python.python
