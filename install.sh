@@ -13,7 +13,6 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 
 echo "Downloading dotfiles...."
 git clone https://github.com/kuroppe1819/dotfiles.git $DOTDIR
-git config --global core.excludesfile ~/.gitignore_global
 
 # Create symbolic links
 for dirPath in `find $DOTDIR -maxdepth 1 -type d | grep -v "\/\."`; do
