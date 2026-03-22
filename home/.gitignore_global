@@ -1,0 +1,18 @@
+# === macOS ===
+# https://github.com/github/gitignore/blob/main/Global/macOS.gitignore
+.DS_Store
+._*
+
+# === JetBrains ===
+# https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+.idea
+*.iws
+*.iml
+
+# === Visual Studio Code ===
+# https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+.vscode
+*.vsix
+
+# === Claude ===
+**/.claude/settings.local.json

@@ -1,0 +1,50 @@
+{
+  "env": {},
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Write(src/**)",
+      "Write(docs/**)",
+      "Write(.tmp/**)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(pnpm install:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Read(**/.env.*)",
+      "Write(**/.env*)",
+      "Read(**/id_rsa)",
+      "Read(**/id_ed25519)",
+      "Read(**/.ssh/**)",
+      "Read(**/.aws/**)",
+      "Read(**/.gnupg/**)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(npm install:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": false,
+  "enabledPlugins": {
+    "document-skills@anthropic-agent-skills": true
+  },
+  "preferredNotifChannel": "auto",
+  "hooks": {
+    "Notification": [
+      {
+        "type": "command",
+        "command": "afplay /System/Library/Sounds/Purr.aiff"
+      }
+    ]
+  }
+}

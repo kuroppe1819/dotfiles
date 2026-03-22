@@ -1,0 +1,16 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	untrackedCache = true
+[user]
+	email = 17245737+kuroppe1819@users.noreply.github.com
+	name = kuroppe1819
+	signingkey = ~/.ssh/id_github.pub
+[ghq]
+	root = ~/workspace
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	allowedSignersFile = ~/.ssh/allowed_signers
+[commit]
+	gpgsign = true

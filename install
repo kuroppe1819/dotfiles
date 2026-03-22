@@ -1,0 +1,54 @@
+#!/bin/bash
+set -eu
+
+e_header() {
+  printf "\n\033[37;1m%s\033[m\n" "$*"
+}
+
+e_done() {
+  printf "\033[32m%s\033[m\n" "✔ $*"
+}
+
+e_error() {
+  printf "\033[31m%s\033[m\n" "✖ $*" 1>&2
+}
+
+DOTDIR=$HOME/dotfiles
+REPO="https://github.com/kuroppe1819/dotfiles.git"
+
+# Homebrew
+e_header "Checking Homebrew..."
+if ! type "brew" >/dev/null 2>&1; then
+  e_header "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  eval $(/opt/homebrew/bin/brew shellenv)
+else
+  e_done "Homebrew already installed"
+fi
+
+# Clone dotfiles
+e_header "Downloading dotfiles..."
+if [[ -d "$DOTDIR" ]]; then
+  e_done "dotfiles already exists at $DOTDIR"
+else
+  git clone "$REPO" "$DOTDIR"
+  e_done "Cloned to $DOTDIR"
+fi
+
+# Brew bundle
+e_header "Installing packages from Brewfile..."
+brew bundle --file="$DOTDIR/brew/Brewfile" < /dev/null
+e_done "Packages installed"
+
+# Symbolic links
+e_header "Creating symbolic links..."
+find "$DOTDIR/home" -type f | while read -r src; do
+  dest="$HOME/${src#$DOTDIR/home/}"
+  mkdir -p "$(dirname "$dest")"
+  ln -snf "$src" "$dest"
+  echo "  $dest -> $src"
+done
+e_done "Symbolic links created"
+
+e_header "Done! Please restart your shell."
