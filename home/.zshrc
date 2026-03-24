@@ -64,7 +64,6 @@ bindkey '^b' branch-fzf
 # ====================
 alias ls="ls -G"
 alias la="ls -a"
-alias glog="git log --oneline"
 alias gpsf="git push --force-with-lease"
 alias sed="gsed"
 alias npx='echo "WARNING: npx is disabled. Use pnpm exec instead." && false'
