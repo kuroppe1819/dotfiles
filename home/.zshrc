@@ -69,6 +69,7 @@ alias gpsf="git push --force-with-lease"
 alias sed="gsed"
 alias npx='echo "WARNING: npx is disabled. Use pnpm exec instead." && false'
 alias npm='echo "WARNING: npm is disabled. Use pnpm instead." && false'
+alias gcb='git rev-parse --abbrev-ref HEAD | tr -d "\n" | pbcopy && echo "Copied: $(git rev-parse --abbrev-ref HEAD)"'
 
 # ====================
 # Local overrides (not tracked in dotfiles)
