@@ -1,0 +1,4 @@
+set main-view-commit-title-graph = no
+
+bind main R !git rebase -i %(commit)
+bind main 0 +sh -c "printf '%(commit)' | cut -c1-7 | pbcopy"
