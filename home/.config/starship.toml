@@ -39,7 +39,8 @@ style = "bold #ff966c"
 
 [cmd_duration]
 min_time = 2_000
-format = "took [$duration]($style) "
+format = "took [$duration]($style)"
+show_milliseconds = true
 style = "bold #ffc777"
 
 [package]
