@@ -42,8 +42,13 @@
   "hooks": {
     "Notification": [
       {
-        "type": "command",
-        "command": "afplay /System/Library/Sounds/Purr.aiff"
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Purr.aiff"
+          }
+        ]
       }
     ]
   }
