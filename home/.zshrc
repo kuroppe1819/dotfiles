@@ -69,6 +69,7 @@ alias sed="gsed"
 alias npx='echo "WARNING: npx is disabled. Use pnpm exec instead." && false'
 alias npm='echo "WARNING: npm is disabled. Use pnpm instead." && false'
 alias gcb='git rev-parse --abbrev-ref HEAD | tr -d "\n" | pbcopy && echo "Copied: $(git rev-parse --abbrev-ref HEAD)"'
+alias vim="nvim"
 
 # ====================
 # Local overrides (not tracked in dotfiles)

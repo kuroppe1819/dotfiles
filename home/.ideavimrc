@@ -1,0 +1,14 @@
+source ~/.config/nvim/common.vim
+
+" leader キーを押したときにキーマップ一覧をポップアップ表示
+set which-key
+
+" ファイル検索
+nnoremap <leader>ff :action GotoFile<CR>
+" 全文検索
+nnoremap <leader>fg :action FindInPath<CR>
+" タブ移動
+nnoremap <leader>n :action NextTab<CR>
+nnoremap <leader>p :action PreviousTab<CR>
+" ファイル内置換（カーソル下の単語を自動挿入）
+nnoremap <leader>r viw:action Replace<CR>
