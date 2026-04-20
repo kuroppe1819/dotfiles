@@ -23,12 +23,15 @@
       "Read(**/.env.*)",
       "Read(**/.env)",
       "Write(**/.env*)",
+      "Read(**/.dev.vars)",
+      "Write(**/.dev.vars)",
       "Read(**/id_rsa)",
       "Read(**/id_ed25519)",
       "Read(**/.ssh/**)",
       "Write(**/.ssh/**)",
       "Read(**/.aws/**)",
       "Read(**/.gnupg/**)",
+      "Read(**/.supabase/**)",
       "Write(**/.gitconfig)"
     ]
   },
