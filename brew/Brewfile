@@ -1,3 +1,4 @@
+brew "ast-grep"
 brew "fzf"
 brew "gh"
 brew "ghq"
