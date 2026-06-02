@@ -1,3 +1,6 @@
+" モードに応じてカーソル形状を変更（Normal: ブロック, Insert: 縦バー, Replace: 下線）
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr-o:hor20
+
 " 行番号を表示
 set number
 " ヤンクをシステムのクリップボードと共有
