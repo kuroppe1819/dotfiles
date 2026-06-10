@@ -4,9 +4,7 @@
     "allow": [
       "Read(**)",
       "Write(**)",
-      "Bash(**)",
-      "WebFetch(**)",
-      "WebSearch(**)"
+      "Bash(**)"
     ],
     "deny": [
       "Bash(sudo:*)",
