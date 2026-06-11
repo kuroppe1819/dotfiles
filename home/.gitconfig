@@ -1,6 +1,15 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	untrackedCache = true
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = false
+[merge]
+	conflictstyle = zdiff3
 [user]
 	email = 17245737+kuroppe1819@users.noreply.github.com
 	name = kuroppe1819

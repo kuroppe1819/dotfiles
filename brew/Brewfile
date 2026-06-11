@@ -1,4 +1,5 @@
 brew "fzf"
+brew "git-delta"
 brew "gh"
 brew "ghq"
 brew "git"

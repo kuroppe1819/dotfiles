@@ -83,16 +83,28 @@ branch-fzf() {
 zle -N branch-fzf
 bindkey '^b' branch-fzf
 
+# git log / rebase with fzf
+_GIT_LOG_FMT=(--abbrev-commit --abbrev=7 --format='%C(yellow)%h %C(cyan)%ad %C(reset)%s' --date=format:'%Y-%m-%d %H:%M' --color=always)
+function glog() { git log "${_GIT_LOG_FMT[@]}" | less -R }
+function grebase() {
+  local commit
+  commit=$(git log "${_GIT_LOG_FMT[@]}" | fzf --ansi --no-sort | awk '{print $1}')
+  [[ -n "$commit" ]] && git rebase -i "$commit"
+}
+
 # ====================
 # Aliases
 # ====================
 alias ls="ls -G"
 alias la="ls -a"
+alias gd="git diff"
+alias gps="git push"
 alias gpsf="git push --force-with-lease"
+alias greset="git reset --hard HEAD && git clean -fd"
+alias gs="git status"
 alias sed="gsed"
 alias npx='echo "WARNING: npx is disabled. Use pnpm exec instead." && false'
 alias npm='echo "WARNING: npm is disabled. Use pnpm instead." && false'
-alias gcb='git rev-parse --abbrev-ref HEAD | tr -d "\n" | pbcopy && echo "Copied: $(git rev-parse --abbrev-ref HEAD)"'
 alias vim="nvim"
 
 # ====================
