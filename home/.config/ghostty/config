@@ -1,0 +1,5 @@
+font-family = Menlo
+font-family = BIZ UDGothic
+font-size = 14
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+window-save-state = always
