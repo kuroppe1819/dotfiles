@@ -1,7 +1,13 @@
 # ====================
-# Homebrew
+# Homebrew (起動時間短縮のため直接展開)
 # ====================
-eval $(/opt/homebrew/bin/brew shellenv)
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar"
+export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX"
+fpath[1,0]="$HOMEBREW_PREFIX/share/zsh/site-functions"
+export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH+:$PATH}"
+[[ -z "${MANPATH-}" ]] || export MANPATH=":${MANPATH#:}"
+export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}"
 
 # ====================
 # PATH
@@ -9,28 +15,46 @@ eval $(/opt/homebrew/bin/brew shellenv)
 export PATH="$HOME/.local/bin:$PATH"
 
 # ====================
+# Cached init (バイナリ更新時のみ再生成)
+# ====================
+function _cached_init() {
+  local cmd=$1; shift
+  local cache="$HOME/.cache/$cmd-init.zsh"
+  if [[ ! -f "$cache" || "${commands[$cmd]}" -nt "$cache" ]]; then
+    [[ -d "$HOME/.cache" ]] || mkdir -p "$HOME/.cache"
+    "$cmd" "$@" > "$cache"
+  fi
+  source "$cache"
+}
+
+# ====================
 # mise (runtime manager)
 # ====================
-eval "$(mise activate zsh)"
+_cached_init mise activate zsh
 
 # ====================
 # Completions
 # ====================
-fpath=($(brew --prefix)/share/zsh-completions $fpath)
-autoload -Uz compinit && compinit -i
+fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
+autoload -Uz compinit
+if [[ -z ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit -C -i  # キャッシュが新鮮な場合はスキップ
+else
+  compinit -i     # 24h 経過した場合は再生成
+fi
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # ====================
 # Plugins
 # ====================
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ====================
 # Prompt
 # ====================
-eval "$(starship init zsh)"
+_cached_init starship init zsh
 
 # ====================
 # fzf
