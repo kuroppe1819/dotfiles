@@ -97,7 +97,7 @@ function grebase() {
 # ====================
 alias ls="ls -G"
 alias la="ls -a"
-alias gd="git diff"
+alias gd="git add -N . && git diff"
 alias gps="git push"
 alias gpsf="git push --force-with-lease"
 alias greset="git reset --hard HEAD && git clean -fd"
