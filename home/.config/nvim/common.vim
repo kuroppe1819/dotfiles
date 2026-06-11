@@ -13,6 +13,8 @@ set smartcase
 set incsearch
 " 検索結果をハイライト表示
 set hlsearch
+" エラー時などのビープ音を消す
+set visualbell
 " カーソル付近に常に上下8行の余白を確保
 set scrolloff=8
 " インデントをスペース2つに設定
