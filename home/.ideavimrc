@@ -3,6 +3,8 @@ source ~/.config/nvim/common.vim
 " leader キーを押したときにキーマップ一覧をポップアップ表示
 set which-key
 
+" 定義先へジャンプ
+nnoremap gd :action GotoDeclaration<CR>
 " ファイル検索
 nnoremap <leader>ff :action GotoFile<CR>
 " 全文検索

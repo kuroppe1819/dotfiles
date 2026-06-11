@@ -2,6 +2,8 @@ source ~/.config/nvim/common.vim
 
 " VSCode 専用設定
 if exists('g:vscode')
+  " 定義先へジャンプ
+  nnoremap gd <Cmd>call VSCodeNotify('editor.action.revealDefinition')<CR>
   " ファイル検索
   nnoremap <leader>ff <Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>
   " 全文検索
