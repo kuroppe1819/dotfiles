@@ -16,7 +16,6 @@
       "Bash(mkfs:*)",
       "Bash(chmod 777:*)",
       "Bash(curl:*)",
-      "Bash(wget:*)",
       "Bash(npm install:*)",
       "Read(**/.env.*)",
       "Read(**/.env)",
