@@ -103,8 +103,6 @@ alias gpsf="git push --force-with-lease"
 alias greset="git reset --hard HEAD && git clean -fd"
 alias gs="git status"
 alias sed="gsed"
-alias npx='echo "WARNING: npx is disabled. Use pnpm exec instead." && false'
-alias npm='echo "WARNING: npm is disabled. Use pnpm instead." && false'
 alias vim="nvim"
 
 # ====================
