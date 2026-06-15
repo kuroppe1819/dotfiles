@@ -32,7 +32,6 @@
       "Write(**/.gitconfig)"
     ]
   },
-  "language": "japanese",
   "enableAllProjectMcpServers": false,
   "hooks": {
     "Notification": [
@@ -50,5 +49,6 @@
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true
   },
+  "language": "japanese",
   "preferredNotifChannel": "auto"
 }
