@@ -1,0 +1,32 @@
+approval_policy = "on-request"
+default_permissions = "restricted_workspace"
+web_search = "cached"
+allow_login_shell = false
+notify = ["afplay", "/System/Library/Sounds/Purr.aiff"]
+
+[permissions.restricted_workspace.filesystem]
+":minimal" = "read"
+":tmpdir" = "write"
+":slash_tmp" = "write"
+glob_scan_max_depth = 4
+"~/.ssh" = "deny"
+"~/.aws" = "deny"
+"~/.gnupg" = "deny"
+"~/.supabase" = "deny"
+"~/.gitconfig" = "read"
+
+[permissions.restricted_workspace.filesystem.":workspace_roots"]
+"." = "write"
+".env" = "deny"
+".env.*" = "deny"
+"**/.env" = "deny"
+"**/.env.*" = "deny"
+".dev.vars" = "deny"
+"**/.dev.vars" = "deny"
+"**/id_rsa" = "deny"
+"**/id_ed25519" = "deny"
+"**/.ssh" = "deny"
+"**/.aws" = "deny"
+"**/.gnupg" = "deny"
+"**/.supabase" = "deny"
+".gitconfig" = "read"
