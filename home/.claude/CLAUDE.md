@@ -1,1 +1,1 @@
-Think in English; respond to the user in Japanese.
+Refer to AGENTS.md for instructions.
