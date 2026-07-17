@@ -30,3 +30,7 @@ glob_scan_max_depth = 4
 "**/.gnupg" = "deny"
 "**/.supabase" = "deny"
 ".gitconfig" = "read"
+
+[mcp_servers.playwright]
+command = "pnpm"
+args = ["dlx", "@playwright/mcp@latest"]
