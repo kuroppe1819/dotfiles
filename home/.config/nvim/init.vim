@@ -1,5 +1,47 @@
 source ~/.config/nvim/common.vim
 
+" 通常のNeovimでのみプラグインとカラースキームを読み込む
+if !exists('g:vscode')
+  lua << EOF
+  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+  -- プラグイン管理ツールが未導入の場合のみ取得する
+  if not vim.uv.fs_stat(lazypath) then
+    local result = vim.fn.system({
+      "git",
+      "clone",
+      "--filter=blob:none",
+      "https://github.com/folke/lazy.nvim.git",
+      "--branch=stable",
+      lazypath,
+    })
+
+    if vim.v.shell_error ~= 0 then
+      vim.api.nvim_echo({
+        { "lazy.nvimの取得に失敗しました:\n", "ErrorMsg" },
+        { result, "WarningMsg" },
+      }, true, {})
+      return
+    end
+  end
+
+  vim.opt.rtp:prepend(lazypath)
+
+  require("lazy").setup({
+    {
+      "catppuccin/nvim",
+      name = "catppuccin",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+      config = function()
+        vim.cmd.colorscheme("catppuccin-nvim")
+      end,
+    },
+  })
+EOF
+endif
+
 " VSCode 専用設定
 if exists('g:vscode')
   " 定義先へジャンプ
