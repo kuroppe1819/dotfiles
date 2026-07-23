@@ -1,0 +1,10 @@
+# メインビュー：短縮コミットID、日時、件名を表示
+set main-view = id:yes,width=7 date:custom commit-title:yes,graph=no,refs=no,overflow=no
+set main-view-date-format = "%Y-%m-%d %H:%M"
+
+# トポロジカル順より読み込み速度を優先
+set commit-order = default
+
+# メイン／差分ビューで作業ツリーの変更とGit notesの読み込みを省略
+set show-changes = no
+set show-notes = no
