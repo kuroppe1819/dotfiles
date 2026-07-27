@@ -3,7 +3,7 @@
   "permissions": {
     "allow": [
       "Read(**)",
-      "Write(**)",
+      "Edit(**)",
       "Bash(**)"
     ],
     "deny": [
@@ -19,17 +19,17 @@
       "Bash(npm install:*)",
       "Read(**/.env.*)",
       "Read(**/.env)",
-      "Write(**/.env*)",
+      "Edit(**/.env*)",
       "Read(**/.dev.vars)",
-      "Write(**/.dev.vars)",
+      "Edit(**/.dev.vars)",
       "Read(**/id_rsa)",
       "Read(**/id_ed25519)",
       "Read(**/.ssh/**)",
-      "Write(**/.ssh/**)",
+      "Edit(**/.ssh/**)",
       "Read(**/.aws/**)",
       "Read(**/.gnupg/**)",
       "Read(**/.supabase/**)",
-      "Write(**/.gitconfig)"
+      "Edit(**/.gitconfig)"
     ]
   },
   "enableAllProjectMcpServers": false,
