@@ -1,2 +1,10 @@
 .DS_Store
 .idea/
+
+# Machine-local agent state
+home/.claude.json
+home/.codex/auth.json
+home/.codex/config.toml
+home/.codex/history.jsonl
+home/.codex/sessions/
+home/.codex/sqlite/
