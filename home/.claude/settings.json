@@ -32,6 +32,7 @@
       "Edit(**/.gitconfig)"
     ]
   },
+  "model": "opus",
   "enableAllProjectMcpServers": false,
   "hooks": {
     "Notification": [
@@ -59,5 +60,6 @@
     }
   },
   "language": "japanese",
+  "theme": "dark",
   "preferredNotifChannel": "auto"
 }
