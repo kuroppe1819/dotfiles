@@ -43,7 +43,7 @@ e_done "Packages installed"
 
 # Symbolic links
 e_header "Creating symbolic links..."
-find "$DOTDIR/home" -type f | while read -r src; do
+find "$DOTDIR/home" \( -type f -o -type l \) | while read -r src; do
   dest="$HOME/${src#$DOTDIR/home/}"
   mkdir -p "$(dirname "$dest")"
   ln -snf "$src" "$dest"
