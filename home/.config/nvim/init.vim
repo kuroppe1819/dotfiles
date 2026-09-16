@@ -50,6 +50,8 @@ if exists('g:vscode')
   nnoremap <leader>ff <Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>
   " 全文検索
   nnoremap <leader>fg <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
+  " クイックフィックス（⌘. 相当）
+  nnoremap <leader>ca <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
   " 分割ペイン間の移動
   nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
   nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
