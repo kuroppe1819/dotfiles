@@ -21,3 +21,5 @@ Code shows *how*; a comment carries only *why* — a non-obvious constraint, a d
 - Never delete an issue.
 - Complete work through the local commit, then tell the user when a push is required.
 - Create a pull request only when its source branch already exists on the remote.
+- If a Git operation is blocked by permissions, execution environment restrictions, or a signing error, stop and provide the working directory and command for the user to run in their own terminal.
+- Do not work around the failure by disabling signing, changing permission settings, or retrying the same operation with elevated privileges.
